@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  database:
+    image: postgres
+    environment:
+      - POSTGRES_USER=fintech
+      - POSTGRES_PASSWORD=secretfintech
+      - POSTGRES_DB=ompalompa
+    ports:
+      - 5511:5432
