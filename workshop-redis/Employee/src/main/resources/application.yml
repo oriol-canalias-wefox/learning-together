@@ -10,3 +10,6 @@ spring:
     redis:
       time-to-live: PT60S
       key-prefix: "${spring.application.name}:"
+  data:
+    redis:
+      password: root

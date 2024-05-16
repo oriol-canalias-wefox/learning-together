@@ -105,11 +105,56 @@ set:
 
 show monitor
 
+### Auth
+From cli we can add a password:
+```shell
+config set requirepass root
+```
+
+```yaml
+  data:
+    redis:
+      password: root
+```
+
+exit and enter again
+
+> Note: the restart of the redis-server will do lose the configuration
+
+## As database
+
+```kotlin
+@EnableRedisRepositories
+
+@RedisHash("person")
+data class Person(
+    @Id
+    var id: String,
+    var name: String,
+    var age: Int
+)
+
+interface PersonRepository: CrudRepository<Person, String>
+
+@RestController
+@RequestMapping("/persons")
+class PersonController(
+    private val personRepository: PersonRepository
+) {
+    @GetMapping("/{id}")
+    fun getPerson(@PathVariable id: String): Person =
+        personRepository.findById(id).orElseThrow()
+
+    @PostMapping
+    fun getPerson(@RequestBody person: Person): Person =
+        personRepository.save(person)
+}
+```
 
 ---
 ## Pending
 
-Auth and Database
+
 
 Lua scripts
 
