@@ -60,7 +60,7 @@ Store only if exists:
 SET "user:info:uri" "myinfo" XX
 SET "user:info:uri" "myinfo" EX 500
 SET "user:info:uri" "updateinfo1" XX
-SET "user:info:uri"
+GET "user:info:uri"
 TTL "user:info:uri"
 ```
 How to keep the TTL
@@ -72,6 +72,11 @@ SET "user:info:uri"
 ```
 
 ## Spring boot and cache
+```kotlin
+	implementation("org.springframework.boot:spring-boot-starter-cache")
+	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+```
+
 ```yaml
   cache:
     type: redis
