@@ -151,6 +151,22 @@ class PersonController(
 }
 ```
 
+### Choose operations - RedisTemplate
+
+```kotlin
+private val redisTemplate: StringRedisTemplate
+
+val operationAllowed = redisTemplate.boundValueOps(request.remoteAddr)
+            .setIfAbsent("true", Duration.ofSeconds(2)) ?: true
+        if (operationAllowed.not()) {
+            throw ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS, "Too many requests")
+        }
+```
+
+```kotlin
+private val redisTemplate: RedisTemplate<String, Boolean>
+```
+
 ---
 ## Pending
 
