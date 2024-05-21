@@ -78,6 +78,9 @@ SET "user:info:uri"
 ```
 
 ```yaml
+  jpa:
+    show-sql: true
+
   cache:
     type: redis
 ```
@@ -88,12 +91,17 @@ SET "user:info:uri"
     ports:
       - 6301:6379
 ```
-```java
+```kotlin
 @EnableCaching
+
+@Cacheable("employees")
+fun findById(id: Long): EmployeeResponse =
 ```
 
 Add `Serializable`
-See the TTL
+
+show monitor and see the TTL
+
 set:
 ```yaml
   cache:
@@ -103,7 +111,6 @@ set:
       key-prefix: "${spring.application.name}:"
 ```
 
-show monitor
 
 ### Auth
 From cli we can add a password:
