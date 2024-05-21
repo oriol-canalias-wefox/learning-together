@@ -19,6 +19,7 @@ repositories {
 }
 
 val openapiStarterWebmvcUiVersion = "2.4.0"
+val dataFakerVersion = "2.1.0"
 
 dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -36,6 +37,9 @@ dependencies {
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openapiStarterWebmvcUiVersion")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.springframework.boot:spring-boot-testcontainers")
+	testImplementation("io.rest-assured:rest-assured")
+	testImplementation("net.datafaker:datafaker:$dataFakerVersion")
 }
 
 tasks.withType<KotlinCompile> {
