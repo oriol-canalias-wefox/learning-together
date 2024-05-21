@@ -28,6 +28,11 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 
+	implementation("org.springframework.boot:spring-boot-starter-cache")
+	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+
+	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
+
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openapiStarterWebmvcUiVersion")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
