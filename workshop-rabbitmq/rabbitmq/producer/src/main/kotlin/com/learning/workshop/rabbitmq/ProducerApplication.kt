@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class RabbitmqApplication
+class ProducerApplication
 
 fun main(args: Array<String>) {
-	runApplication<RabbitmqApplication>(*args)
+	runApplication<ProducerApplication>(*args)
 }

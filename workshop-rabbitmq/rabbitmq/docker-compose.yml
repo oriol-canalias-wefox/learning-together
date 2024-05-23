@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  redis:
-    image: rabbitmq
+  rabbitmq:
+    image: rabbitmq:3-management
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=admin
