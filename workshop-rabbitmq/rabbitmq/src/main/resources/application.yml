@@ -1,3 +1,6 @@
 spring:
   application:
-    name: workshop-rabbitmq
+    name: producer-rabbitmq
+
+server:
+  port: 8001
