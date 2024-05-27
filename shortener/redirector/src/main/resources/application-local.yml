@@ -1,0 +1,7 @@
+spring:
+  data:
+    redis:
+      port: 6311
+
+server:
+  port: 8000

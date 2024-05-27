@@ -1,0 +1,9 @@
+spring:
+  rabbitmq:
+    username: admin
+    password: mysupersecretpassword
+    virtual-host: shortener
+    port: 4472
+
+server:
+  port: 8001

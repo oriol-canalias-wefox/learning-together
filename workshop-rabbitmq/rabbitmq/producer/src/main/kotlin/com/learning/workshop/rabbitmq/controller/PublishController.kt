@@ -21,6 +21,7 @@ class PublishController(
                       @PathVariable routingKey: String,
                       @RequestBody request: String) {
         logger.info("simplePublish, exchange: $exchange, routingKey: $routingKey, request: $request")
+        Thread.sleep(10_000)
         rabbitTemplate.convertAndSend(exchange, routingKey, request)
     }
 
