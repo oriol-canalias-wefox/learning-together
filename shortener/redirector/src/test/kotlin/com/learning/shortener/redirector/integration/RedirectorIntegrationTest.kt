@@ -1,24 +1,19 @@
 package com.learning.shortener.redirector.integration
 
+import com.learning.shortener.common.extensions.buildWithPath
+import com.learning.shortener.common.extensions.toHash
 import com.learning.shortener.redirector.configuration.FakerConfiguration
-import com.learning.shortener.redirector.domain.response.RegisterResponse
-import com.learning.shortener.redirector.extensions.buildWithPath
-import com.learning.shortener.redirector.extensions.toHash
 import io.restassured.RestAssured
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotEquals
-import org.junit.jupiter.api.Assertions.assertNotNull
-import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.server.LocalServerPort
 import org.springframework.data.redis.core.StringRedisTemplate
 import org.springframework.http.HttpStatus
-import org.springframework.http.MediaType
 import java.net.URL
-import java.util.UUID
+import java.util.*
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class RedirectorIntegrationTest(

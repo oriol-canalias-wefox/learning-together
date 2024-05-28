@@ -39,6 +39,7 @@ dependencies {
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.boot:spring-boot-testcontainers")
+	testImplementation("org.testcontainers:rabbitmq")
 	testImplementation("io.rest-assured:rest-assured")
 	testImplementation("net.datafaker:datafaker:$dataFakerVersion")
 }
