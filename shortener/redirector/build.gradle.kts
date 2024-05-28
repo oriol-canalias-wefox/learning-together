@@ -33,6 +33,8 @@ dependencies {
 
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 
+	implementation("org.springframework.boot:spring-boot-starter-amqp")
+
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$openapiStarterWebmvcUiVersion")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
