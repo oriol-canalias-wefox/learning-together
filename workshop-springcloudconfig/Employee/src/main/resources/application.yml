@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Employee
+    name: workshop-employee
   datasource:
     url: jdbc:postgresql://localhost:5432/ompalompa
     username: user
