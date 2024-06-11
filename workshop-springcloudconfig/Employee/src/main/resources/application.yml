@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: Employee
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ompalompa
+    username: user
+    password: local-no-so-secret
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+employee:
+  description:
+    mandatory: false

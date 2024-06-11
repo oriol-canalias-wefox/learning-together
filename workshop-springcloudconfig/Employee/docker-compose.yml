@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  database-local:
+    image: postgres
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=local-no-so-secret
+      - POSTGRES_DB=ompalompa
+    ports:
+      - 5432:5432
+  database-dev:
+    image: postgres
+    environment:
+      - POSTGRES_USER=fintech
+      - POSTGRES_PASSWORD=dev-secretfintech
+      - POSTGRES_DB=ompalompadev
+    ports:
+      - 5511:5432
+  database-pro:
+    image: postgres
+    environment:
+      - POSTGRES_USER=fintech
+      - POSTGRES_PASSWORD=pro-secretfintech
+      - POSTGRES_DB=ompalompapro
+    ports:
+      - 5512:5432

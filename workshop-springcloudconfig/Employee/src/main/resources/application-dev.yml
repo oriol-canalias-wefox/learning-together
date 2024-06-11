@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5511/ompalompadev
+    username: fintech
+    password: dev-secretfintech
+
+employee:
+  description:
+    mandatory: false
