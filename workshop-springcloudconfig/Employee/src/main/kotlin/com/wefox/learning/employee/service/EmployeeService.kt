@@ -1,6 +1,5 @@
 package com.wefox.learning.employee.service
 
-import com.wefox.learning.employee.domain.entity.Employee
 import com.wefox.learning.employee.domain.request.EmployeeRequest
 import com.wefox.learning.employee.domain.response.EmployeeResponse
 import com.wefox.learning.employee.extensions.toEmployee
@@ -18,11 +17,11 @@ class EmployeeService(
 ) {
 
     fun save(employeeRequest: EmployeeRequest) {
-        if (employeeRepository.existsByName(employeeRequest.name)) {
-            throw RuntimeException("Employee already exists")
-        }
         if (descriptionMandatory && employeeRequest.description == null) {
             throw RuntimeException("Description is mandatory")
+        }
+        if (employeeRepository.existsByName(employeeRequest.name)) {
+            throw RuntimeException("Employee already exists")
         }
         employeeRepository.save(employeeRequest.toEmployee())
     }
