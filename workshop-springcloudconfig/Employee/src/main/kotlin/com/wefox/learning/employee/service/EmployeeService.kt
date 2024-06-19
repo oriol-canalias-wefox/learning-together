@@ -6,9 +6,11 @@ import com.wefox.learning.employee.extensions.toEmployee
 import com.wefox.learning.employee.extensions.toResponse
 import com.wefox.learning.employee.repository.EmployeeRepository
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.cloud.context.config.annotation.RefreshScope
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 
+@RefreshScope
 @Service
 class EmployeeService(
     private val employeeRepository: EmployeeRepository,

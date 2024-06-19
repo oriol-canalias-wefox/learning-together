@@ -9,6 +9,15 @@ spring:
     hibernate:
       ddl-auto: update
 
+
+
 employee:
   description:
     mandatory: false
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, refresh

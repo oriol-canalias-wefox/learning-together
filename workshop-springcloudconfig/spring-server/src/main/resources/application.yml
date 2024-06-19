@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/oriol-canalias-wefox/repoconfig.git
+          search-paths: '{application}/{profile}'
+          clone-on-start: true
+
+encrypt:
+  key: myfuckingkeyy-yeahhh
